@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vikashini Ponnusamy — Senior Process Executive, Mortgage & Loan Documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#101d33;
+    --ink-2:#182c4c;
+    --ink-3:#22385c;
+    --paper:#f4efe2;
+    --paper-2:#ece4d0;
+    --paper-line:#d9cfb2;
+    --brass:#b8863c;
+    --brass-light:#d4a866;
+    --brass-dark:#8c672c;
+    --seal:#3f6b4f;
+    --seal-dark:#2c4d38;
+    --ink-text:#1c2432;
+    --muted:#6b6456;
+    --cream:#f2ead8;
+    --cream-dim:#c9c0a9;
+    --max:1180px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--paper);
+    color:var(--ink-text);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  img,svg{display:block;max-width:100%;}
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;}
+
+  /* ---------- FOLDER NAV ---------- */
+  .folder-nav{
+    position:sticky;top:0;z-index:100;
+    background:var(--paper);
+    border-bottom:1px solid var(--paper-line);
+  }
+  .nav-inner{
+    max-width:var(--max);margin:0 auto;padding:0 32px;
+    display:flex;align-items:center;justify-content:space-between;
+    height:74px;
+  }
+  .brand{display:flex;flex-direction:column;line-height:1.1;}
+  .brand .name{font-family:'Fraunces',serif;font-weight:700;font-size:17px;letter-spacing:.01em;color:var(--ink);}
+  .brand .case-no{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--brass-dark);letter-spacing:.12em;margin-top:2px;}
+
+  .tabs{display:flex;align-items:flex-end;height:100%;gap:2px;}
+  .tab{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--muted);
+    padding:12px 18px 10px;
+    border:1px solid transparent;
+    border-bottom:none;
+    border-radius:8px 8px 0 0;
+    position:relative;
+    top:1px;
+    transition:color .2s ease, background .2s ease, border-color .2s ease;
+  }
+  .tab:hover{color:var(--ink);}
+  .tab.active{
+    color:var(--ink);
+    background:var(--cream);
+    border-color:var(--paper-line);
+    border-bottom:1px solid var(--cream);
+  }
+
+  .nav-toggle{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:8px;}
+  .nav-toggle span{width:22px;height:2px;background:var(--ink);display:block;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(ellipse at 85% -10%, rgba(184,134,60,.18), transparent 55%),
+      var(--ink);
+    color:var(--cream);
+    padding:88px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(242,234,216,.035) 0 1px, transparent 1px 34px),
+      repeating-linear-gradient(90deg, rgba(242,234,216,.035) 0 1px, transparent 1px 34px);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:56px;
+    align-items:center;
+    position:relative;
+  }
+  .hero-eyebrow{color:var(--brass-light);display:flex;align-items:center;gap:10px;margin-bottom:22px;}
+  .hero-eyebrow::before{content:"";width:26px;height:1px;background:var(--brass-light);}
+  .hero h1{
+    font-size:clamp(38px,5.4vw,64px);
+    line-height:1.02;
+    color:var(--paper);
+    margin-bottom:16px;
+  }
+  .hero h1 em{font-style:normal;color:var(--brass-light);}
+  .hero .role{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:15px;
+    color:var(--cream-dim);
+    margin-bottom:22px;
+    letter-spacing:.02em;
+  }
+  .hero p.desc{max-width:52ch;color:#cfc7b4;font-size:16px;margin-bottom:34px;}
+
+  .hero-meta{display:flex;flex-wrap:wrap;gap:18px 28px;margin-bottom:38px;}
+  .hero-meta div{display:flex;align-items:center;gap:9px;font-size:13.5px;color:#d8d0bd;}
+  .hero-meta svg{width:16px;height:16px;flex-shrink:0;stroke:var(--brass-light);}
+
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    padding:14px 26px;border-radius:3px;
+    display:inline-flex;align-items:center;gap:8px;
+    cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, background .2s ease;
+    border:1px solid transparent;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--brass);color:var(--ink);}
+  .btn-primary:hover{background:var(--brass-light);}
+  .btn-ghost{border-color:rgba(242,234,216,.35);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--paper);background:rgba(242,234,216,.06);}
+
+  /* hero illustration */
+  .file-illustration{position:relative;display:flex;justify-content:center;}
+  .file-illustration svg{width:100%;max-width:420px;}
+  .stamp{
+    position:absolute;
+    top:8%;
+    right:6%;
+    width:128px;height:128px;
+    animation:stampIn .7s cubic-bezier(.2,1.4,.4,1) .5s both;
+  }
+  @keyframes stampIn{
+    0%{opacity:0;transform:scale(1.9) rotate(-26deg);}
+    100%{opacity:1;transform:scale(1) rotate(-14deg);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .stamp{animation:none;transform:rotate(-14deg);}
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:88px 0;}
+  .section-head{margin-bottom:52px;max-width:640px;}
+  .section-head .eyebrow{color:var(--brass-dark);margin-bottom:10px;display:block;}
+  .section-head h2{font-size:clamp(26px,3.4vw,38px);color:var(--ink);}
+  .section-head p{color:var(--muted);margin-top:12px;font-size:15.5px;}
+
+  .light{background:var(--paper);}
+  .paper-2{background:var(--paper-2);}
+  .dark{background:var(--ink);color:var(--cream);}
+  .dark .section-head h2{color:var(--paper);}
+  .dark .section-head p{color:var(--cream-dim);}
+  .dark .eyebrow{color:var(--brass-light);}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .about-grid p{font-size:16px;color:var(--ink-text);max-width:58ch;}
+  .about-grid p+p{margin-top:16px;}
+
+  .stat-tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .tile{
+    background:var(--cream);
+    border:1px solid var(--paper-line);
+    border-radius:6px;
+    padding:22px 20px;
+  }
+  .tile .num{font-family:'Fraunces',serif;font-size:30px;color:var(--brass-dark);font-weight:700;line-height:1;}
+  .tile .label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-top:8px;}
+
+  /* ---------- EXPERIENCE LEDGER ---------- */
+  .ledger{position:relative;padding-left:2px;}
+  .ledger::before{
+    content:"";position:absolute;left:29px;top:10px;bottom:10px;width:1px;
+    background:repeating-linear-gradient(to bottom, var(--paper-line) 0 6px, transparent 6px 12px);
+  }
+  .entry{position:relative;padding-left:74px;margin-bottom:52px;}
+  .entry:last-child{margin-bottom:0;}
+  .entry-mark{
+    position:absolute;left:0;top:2px;
+    width:59px;height:59px;
+    border-radius:50%;
+    border:2px solid var(--seal);
+    display:flex;align-items:center;justify-content:center;
+    background:var(--paper);
+    color:var(--seal);
+  }
+  .entry-mark svg{width:24px;height:24px;stroke:var(--seal);}
+  .entry-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin-bottom:6px;}
+  .entry-top .role{font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:var(--ink);}
+  .entry-top .date{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--brass-dark);background:var(--cream);border:1px solid var(--paper-line);padding:3px 10px;border-radius:20px;letter-spacing:.04em;}
+  .entry-org{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);margin-bottom:16px;}
+  .entry ul{list-style:none;}
+  .entry li{position:relative;padding-left:20px;margin-bottom:9px;font-size:15px;color:#3a3327;}
+  .entry li::before{content:"—";position:absolute;left:0;color:var(--brass);}
+
+  /* ---------- COMPETENCIES ---------- */
+  .chip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .chip{
+    background:var(--ink-2);
+    border:1px solid var(--ink-3);
+    border-radius:6px;
+    padding:20px 18px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .chip svg{width:22px;height:22px;stroke:var(--brass-light);flex-shrink:0;}
+  .chip span{font-size:13.5px;color:var(--cream);line-height:1.35;font-weight:500;}
+
+  /* ---------- HIGHLIGHTS ---------- */
+  .highlight-strip{
+    display:grid;grid-template-columns:repeat(5,1fr);
+    border:1px solid var(--paper-line);
+    border-radius:8px;overflow:hidden;
+    background:var(--cream);
+  }
+  .hl{padding:30px 20px;border-right:1px solid var(--paper-line);text-align:left;}
+  .hl:last-child{border-right:none;}
+  .hl .num{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:var(--brass-dark);}
+  .hl .cap{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-top:8px;}
+
+  /* ---------- CREDENTIALS ---------- */
+  .cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .cred-card{
+    background:var(--paper);
+    border:1px solid var(--paper-line);
+    border-radius:8px;
+    padding:32px;
+  }
+  .cred-card h3{font-size:18px;color:var(--ink);margin-bottom:4px;}
+  .cred-card .sub{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .cred-card ul{list-style:none;}
+  .cred-card li{display:flex;gap:10px;margin-bottom:10px;font-size:14.5px;align-items:flex-start;}
+  .cred-card li svg{width:16px;height:16px;stroke:var(--seal);flex-shrink:0;margin-top:3px;}
+
+  .why-row{
+    margin-top:28px;
+    display:grid;grid-template-columns:repeat(5,1fr);gap:14px;
+  }
+  .why-item{
+    background:var(--ink);color:var(--cream);
+    border-radius:6px;padding:18px 16px;
+    display:flex;flex-direction:column;gap:10px;
+    border:1px solid var(--ink-3);
+  }
+  .why-item svg{width:20px;height:20px;stroke:var(--brass-light);}
+  .why-item span{font-size:13px;font-weight:500;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--ink);color:var(--cream);}
+  .contact-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+  .contact h2{font-size:clamp(28px,3.6vw,42px);color:var(--paper);margin-bottom:16px;}
+  .contact p.lead{color:var(--cream-dim);max-width:48ch;margin-bottom:30px;font-size:16px;}
+  .contact-list{display:flex;flex-direction:column;gap:16px;}
+  .contact-list a{
+    display:flex;align-items:center;gap:14px;
+    font-family:'IBM Plex Mono',monospace;font-size:14px;
+    color:var(--cream);
+    border:1px solid var(--ink-3);border-radius:6px;
+    padding:16px 18px;transition:border-color .2s ease, background .2s ease;
+  }
+  .contact-list a:hover{border-color:var(--brass);background:var(--ink-2);}
+  .contact-list svg{width:18px;height:18px;stroke:var(--brass-light);flex-shrink:0;}
+
+  .seal-box{
+    border:2px dashed var(--ink-3);
+    border-radius:10px;
+    padding:44px 30px;
+    text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:18px;
+  }
+  .seal-box svg{width:96px;height:96px;}
+  .seal-box .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);}
+
+  footer{
+    background:var(--ink);
+    border-top:1px solid var(--ink-3);
+    padding:22px 0;
+    text-align:center;
+  }
+  footer p{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--cream-dim);letter-spacing:.03em;}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr;}
+    .file-illustration{order:-1;max-width:320px;margin:0 auto 20px;}
+    .about-grid{grid-template-columns:1fr;}
+    .chip-grid{grid-template-columns:repeat(2,1fr);}
+    .highlight-strip{grid-template-columns:repeat(2,1fr);}
+    .hl{border-bottom:1px solid var(--paper-line);}
+    .cred-grid{grid-template-columns:1fr;}
+    .why-row{grid-template-columns:repeat(2,1fr);}
+    .contact-inner{grid-template-columns:1fr;}
+    .tabs{display:none;position:absolute;top:74px;left:0;right:0;background:var(--paper);flex-direction:column;border-bottom:1px solid var(--paper-line);padding:6px 0;}
+    .tabs.open{display:flex;}
+    .tab{border-radius:0;padding:14px 32px;width:100%;}
+    .nav-toggle{display:flex;}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    .chip-grid{grid-template-columns:1fr;}
+    .highlight-strip{grid-template-columns:1fr;}
+    .hl{border-right:none;}
+    .why-row{grid-template-columns:1fr;}
+    .entry{padding-left:60px;}
+    .entry-mark{width:48px;height:48px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="folder-nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <span class="name">Vikashini Ponnusamy</span>
+      <span class="case-no">FILE NO. VP&nbsp;·&nbsp;MORTGAGE DOCUMENTATION</span>
+    </div>
+    <nav class="tabs" id="tabs">
+      <a class="tab" data-target="overview" href="#overview">Overview</a>
+      <a class="tab" data-target="about" href="#about">About</a>
+      <a class="tab" data-target="experience" href="#experience">Experience</a>
+      <a class="tab" data-target="expertise" href="#expertise">Expertise</a>
+      <a class="tab" data-target="credentials" href="#credentials">Credentials</a>
+      <a class="tab" data-target="contact" href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="overview">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-eyebrow eyebrow">SENIOR PROCESS EXECUTIVE — LOAN FILE REVIEW</div>
+        <h1>Vikashini<br><em>Ponnusamy</em></h1>
+        <div class="role">Mortgage &amp; Loan Documentation · Quality Assurance &amp; Compliance</div>
+        <p class="desc">Seven-plus years reviewing US mortgage and foreclosure files for Cognizant Technology Solutions — closing out discrepancies, holding SLAs, and coaching the team that keeps the paperwork audit-ready.</p>
+
+        <div class="hero-meta">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Coimbatore, Tamil Nadu, India</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2Z"/></svg>+91 87547 49745</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>vikashini227@gmail.com</div>
+        </div>
+
+        <div class="btn-row">
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="#experience" class="btn btn-ghost">Review Experience</a>
+        </div>
+      </div>
+
+      <div class="file-illustration">
+        <svg viewBox="0 0 400 380" fill="none">
+          <rect x="46" y="40" width="230" height="300" rx="6" fill="#f2ead8" stroke="#c9bd97" stroke-width="2"/>
+          <rect x="46" y="40" width="230" height="26" rx="6" fill="#e3d8b8"/>
+          <line x1="70" y1="96" x2="252" y2="96" stroke="#c9bd97" stroke-width="3"/>
+          <line x1="70" y1="118" x2="252" y2="118" stroke="#dcd1ae" stroke-width="3"/>
+          <line x1="70" y1="140" x2="220" y2="140" stroke="#dcd1ae" stroke-width="3"/>
+          <line x1="70" y1="172" x2="252" y2="172" stroke="#dcd1ae" stroke-width="3"/>
+          <line x1="70" y1="194" x2="230" y2="194" stroke="#dcd1ae" stroke-width="3"/>
+          <line x1="70" y1="216" x2="252" y2="216" stroke="#dcd1ae" stroke-width="3"/>
+          <line x1="70" y1="248" x2="252" y2="248" stroke="#dcd1ae" stroke-width="3"/>
+          <line x1="70" y1="270" x2="200" y2="270" stroke="#dcd1ae" stroke-width="3"/>
+          <!-- house watermark -->
+          <g opacity="0.5">
+            <path d="M110 305 118 296 126 305" stroke="#b8863c" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="112" y="304" width="12" height="12" fill="none" stroke="#b8863c" stroke-width="3"/>
+          </g>
+          <!-- second sheet behind -->
+          <rect x="86" y="18" width="230" height="300" rx="6" fill="#ffffff" opacity="0" />
+          <rect x="66" y="28" width="230" height="304" rx="6" fill="#e9e0c9" stroke="#c9bd97" stroke-width="2" opacity="0.6"/>
+        </svg>
+        <div class="stamp">
+          <svg viewBox="0 0 140 140" fill="none">
+            <circle cx="70" cy="70" r="62" stroke="#3f6b4f" stroke-width="3" stroke-dasharray="4 5"/>
+            <circle cx="70" cy="70" r="50" stroke="#3f6b4f" stroke-width="2"/>
+            <text x="70" y="60" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#3f6b4f" font-weight="700" letter-spacing="1">VERIFIED</text>
+            <text x="70" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#3f6b4f" letter-spacing="2">ON RECORD</text>
+            <path d="M52 92 l8 8 20-20" stroke="#3f6b4f" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="light" id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">01 — Summary</span>
+        <h2>Built for high-volume accuracy</h2>
+        <p>A quick read on how she works — and the record that backs it up.</p>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>Vikashini is a detail-oriented Senior Process Executive with 7+ years reviewing US mortgage and foreclosure documentation, running quality control, and holding the line on audit compliance at Cognizant Technology Solutions.</p>
+          <p>She's known for root-cause analysis that actually reduces repeat errors, SLA adherence under volume, and cross-functional client communication — plus a habit of training new team members and pushing process improvements that stick.</p>
+        </div>
+        <div class="stat-tiles reveal">
+          <div class="tile"><div class="num">7+</div><div class="label">Years in Mortgage Docs</div></div>
+          <div class="tile"><div class="num">2</div><div class="label">Roles at Cognizant</div></div>
+          <div class="tile"><div class="num">QC</div><div class="label">Audit &amp; Compliance Focus</div></div>
+          <div class="tile"><div class="num">SME</div><div class="label">Task Allocation &amp; Training</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="paper-2" id="experience">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">02 — Case History</span>
+        <h2>Professional experience</h2>
+        <p>Two roles, one file: seven years of steadily taking on more of the review.</p>
+      </div>
+
+      <div class="ledger">
+        <div class="entry reveal">
+          <div class="entry-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <div class="entry-top">
+            <span class="role">Senior Process Executive</span>
+            <span class="date">2019 — Present</span>
+          </div>
+          <div class="entry-org">Cognizant Technology Solutions</div>
+          <ul>
+            <li>Reviews and validates US mortgage and foreclosure documentation for accuracy, keeping records audit-ready and SLAs on track.</li>
+            <li>Runs root-cause analysis on process discrepancies and delivers corrective feedback that cuts down repeat errors.</li>
+            <li>Leads daily process briefings and allocates tasks across the team to balance workload against turnaround targets.</li>
+            <li>Trains and mentors new team members on documentation standards, QC checkpoints, and compliance procedure.</li>
+            <li>First point of contact for client escalations — resolves issues quickly while keeping the relationship intact.</li>
+            <li>Partners with process leads on continuous-improvement initiatives to streamline documentation workflows.</li>
+          </ul>
+        </div>
+
+        <div class="entry reveal">
+          <div class="entry-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <div class="entry-top">
+            <span class="role">Process Executive</span>
+            <span class="date">2017 — 2019</span>
+          </div>
+          <div class="entry-org">Cognizant Technology Solutions</div>
+          <ul>
+            <li>Managed initial US mortgage processing activity, including document verification and quality checks against state-specific requirements.</li>
+            <li>Retrieved and validated state-specific mortgage documentation to support compliance and processing accuracy.</li>
+            <li>Acted as subject matter expert for task allocation and process transmission within the team.</li>
+            <li>Sat in on client meetings and supported exception-handling workflows for non-standard cases.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="dark" id="expertise">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">03 — Core Competencies</span>
+        <h2>What's on the file</h2>
+        <p>The skill set behind every case she signs off on.</p>
+      </div>
+      <div class="chip-grid reveal">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><span>Mortgage &amp; Foreclosure Documentation Review</span></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg><span>Quality Control &amp; Audit Compliance</span></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><span>Root-Cause Analysis &amp; Corrective Action</span></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>SLA Management &amp; Task Allocation</span></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Team Training &amp; Process Coaching</span></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Client Escalation Handling</span></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg><span>Workflow &amp; Process Optimization</span></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M8 4v14"/></svg><span>Digital Automation Fabric (DAF)</span></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>MS Office Suite</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="light">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">04 — At A Glance</span>
+        <h2>Professional highlights</h2>
+      </div>
+      <div class="highlight-strip reveal">
+        <div class="hl"><div class="num">7+ Yrs</div><div class="cap">In the mortgage domain</div></div>
+        <div class="hl"><div class="num">100%</div><div class="cap">Focused on accuracy &amp; audit compliance</div></div>
+        <div class="hl"><div class="num">Mentor</div><div class="cap">Trains &amp; guides new team members</div></div>
+        <div class="hl"><div class="num">Frontline</div><div class="cap">Handles client escalations directly</div></div>
+        <div class="hl"><div class="num">Process</div><div class="cap">Drives efficiency through automation</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="paper-2" id="credentials">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">05 — Credentials</span>
+        <h2>Education &amp; technical proficiency</h2>
+      </div>
+      <div class="cred-grid reveal">
+        <div class="cred-card">
+          <h3>Bachelor of Information Technology</h3>
+          <div class="sub">Dr. SNS Rajalakshmi College of Arts and Science — 2017 · CGPA 7.1</div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>Foundational IT degree ahead of a 7+ year run in mortgage documentation.</li>
+          </ul>
+        </div>
+        <div class="cred-card">
+          <h3>Technical Proficiency</h3>
+          <div class="sub">Tools used day to day</div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>MS Office Suite — Word, Excel, Outlook</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Digital Automation Fabric (DAF)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:56px;">
+        <div class="section-head" style="margin-bottom:0;">
+          <span class="eyebrow">06 — Why Work With Her</span>
+          <h2>Reliable, on the details</h2>
+        </div>
+        <div class="why-row">
+          <div class="why-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><span>Detail Oriented</span></div>
+          <div class="why-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 4 5-8"/></svg><span>High-Volume Handling</span></div>
+          <div class="why-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg><span>Strong Analytical Skills</span></div>
+          <div class="why-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/></svg><span>Reliable &amp; Responsible</span></div>
+          <div class="why-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg><span>Continuous Learner</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-inner">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--brass-light);">07 — Open a File</span>
+        <h2>Let's connect</h2>
+        <p class="lead">Open to conversations with teams that need someone dependable on mortgage documentation, QC, or audit compliance — reach out any time.</p>
+        <div class="contact-list">
+          <a href="mailto:vikashini227@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>vikashini227@gmail.com</a>
+          <a href="tel:+918754749745"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2Z"/></svg>+91 87547 49745</a>
+          <a href="#overview"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Coimbatore, Tamil Nadu, India</a>
+        </div>
+      </div>
+      <div class="seal-box reveal">
+        <svg viewBox="0 0 140 140" fill="none">
+          <circle cx="70" cy="70" r="62" stroke="#b8863c" stroke-width="3" stroke-dasharray="4 5"/>
+          <circle cx="70" cy="70" r="50" stroke="#b8863c" stroke-width="2"/>
+          <text x="70" y="64" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#d4a866" font-weight="700" letter-spacing="1">OPEN TO</text>
+          <text x="70" y="80" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#d4a866" font-weight="700" letter-spacing="1">OPPORTUNITIES</text>
+        </svg>
+        <span class="tag">Currently reviewing new roles</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>VIKASHINI PONNUSAMY · MORTGAGE &amp; LOAN DOCUMENTATION PORTFOLIO</p>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const tabs = document.getElementById('tabs');
+  navToggle.addEventListener('click', () => tabs.classList.toggle('open'));
+  tabs.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => tabs.classList.remove('open')));
+
+  // active tab on scroll
+  const sections = document.querySelectorAll('main section[id]');
+  const tabLinks = document.querySelectorAll('.tab');
+  const setActive = () => {
+    let current = sections[0].id;
+    const y = window.scrollY + 120;
+    sections.forEach(sec => { if (y >= sec.offsetTop) current = sec.id; });
+    tabLinks.forEach(link => link.classList.toggle('active', link.dataset.target === current));
+  };
+  window.addEventListener('scroll', setActive);
+  setActive();
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
